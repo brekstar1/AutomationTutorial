@@ -80,8 +80,15 @@ public class ElementHelper {
         Assert.assertEquals(actualMessage, expectedMessage, "Mesajul nu este afisat corect.");
     }
 
-    public void validateElementContainsText(WebElement element, String value){
+    public void validateElementContainsText(WebElement element, String value) {
         waitForVisible(element);
         Assert.assertTrue(element.getText().contains(value));
+    }
+
+    public void validateSizeList(By locator, int expectedSize) {
+        waitForPresenceList(locator);
+        List<WebElement> initialList = driver.findElements(locator);
+        int initialTableSize = initialList.size();
+        Assert.assertEquals(initialTableSize, expectedSize, "Dimensiunea listei nu este " + expectedSize);
     }
 }
