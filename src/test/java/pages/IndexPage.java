@@ -1,17 +1,12 @@
 package pages;
 
-import helperMethods.ElementHelper;
 import org.openqa.selenium.WebDriver;
 import pageLocators.IndexLocators;
 
-public class IndexPage {
-
-    private WebDriver driver;
-    private ElementHelper elementHelper;
+public class IndexPage extends BasePage{
 
     public IndexPage(WebDriver driver) {
-        this.driver = driver;
-        elementHelper = new ElementHelper(driver);
+        super(driver);
     }
 
     public void clickOnAlertWindowFrameMenu(){
@@ -28,5 +23,21 @@ public class IndexPage {
 
     public void clickOnWindowsSubMenu(){
         elementHelper.clickJSLocator(IndexLocators.windowsElement);
+    }
+
+    public void clickOnFormsMenu(){
+        elementHelper.clickJSLocator(IndexLocators.formsMenuElement);
+    }
+
+    public void clickOnFormSubMenu(){
+        elementHelper.clickJSLocator(IndexLocators.practiceFormElement);
+    }
+
+    public void clickOnElementsMenu(){
+        elementHelper.clickJSLocator(IndexLocators.elementsMenuElement);
+    }
+
+    public void clickOnWebTablesMenu(){
+        elementHelper.clickJSLocator(IndexLocators.webTablesElement);
     }
 }
