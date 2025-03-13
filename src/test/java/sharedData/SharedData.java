@@ -20,7 +20,7 @@ public class SharedData {
 
     @AfterMethod
     public void clearEnvironment(){
-       driver.quit();
+        driver.quit();
     }
 
     public WebDriver getDriver() {

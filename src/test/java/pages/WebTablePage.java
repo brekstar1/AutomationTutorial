@@ -36,20 +36,12 @@ public class WebTablePage extends BasePage{
         Assert.assertTrue(rowText.contains(ageValue));
     }
 
-    public void editNewEntry(String editsalaryValue,String editdepartamentValue,String editageValue, int tableSize){
+    public void editNewEntry(String editsalaryValue,String editdepartamentValue,String editAgeValue, int tableSize){
         elementHelper.clickLocator(WebTableLocators.editElement);
 
-        WebElement editsalaryElement = driver.findElement(By.id("salary"));
-        editsalaryElement.clear();
-        editsalaryElement.sendKeys(editsalaryValue);
-
-        WebElement editdepartamentElement = driver.findElement(By.id("department"));
-        editdepartamentElement.clear();
-        editdepartamentElement.sendKeys(editdepartamentValue);
-
-        WebElement editAgeElement = driver.findElement(By.id("age"));
-        editAgeElement.clear();
-        editAgeElement.sendKeys(editageValue);
+        elementHelper.clearAndFillLocator(WebTableLocators.editSalaryElement,editsalaryValue);
+        elementHelper.clearAndFillLocator(WebTableLocators.editDepartmentElement,editdepartamentValue);
+        elementHelper.clearAndFillLocator(WebTableLocators.editAgeElement,editAgeValue);
 
         elementHelper.clickLocator(WebTableLocators.editSubmitElement);
 
@@ -59,7 +51,7 @@ public class WebTablePage extends BasePage{
         String editrowText = editTableElementList.get(tableSize-1).getText();
         Assert.assertTrue(editrowText.contains(editdepartamentValue));
         Assert.assertTrue(editrowText.contains(editsalaryValue));
-        Assert.assertTrue(editrowText.contains(editageValue));
+        Assert.assertTrue(editrowText.contains(editAgeValue));
     }
 
     public void deleteNewEntry(int tableSize){
