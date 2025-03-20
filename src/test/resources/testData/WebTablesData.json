@@ -1,0 +1,13 @@
+{
+  "firstNameValue": "Andrei",
+  "lastNameValue": "Savu",
+  "userEmailValue": "test@tester.com",
+  "ageValue": "26",
+  "salaryValue": "5000",
+  "departmentValue": "IT",
+  "editSalaryValue": "2500",
+  "editDepartmentValue": "HR",
+  "editAgeValue": "27",
+  "newTableSize": 4,
+  "actualTableSize": 3
+}

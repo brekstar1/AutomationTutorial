@@ -1,0 +1,22 @@
+{
+  "firstNameValue": "Andrei",
+  "lastNameValue": "Savu",
+  "emailValue": "test@test.com",
+  "genderValue": "Male",
+  "mobileValue": "4078044220",
+  "subjectValues": [
+    "Arts",
+    "Accounting",
+    "Maths"
+  ],
+  "hobbyValues": [
+    "Sports",
+    "Reading",
+    "Music"
+  ],
+  "pictureValue": "src/test/resources/Screenshot 2025-01-26 102012.png",
+  "addressValue": "Strada Marsa, nr.2, sector 4,Bucuresti",
+  "stateInputValue": "NCR",
+  "cityInputValue": "Delhi",
+  "expectedMessage": "Thanks for submitting the form"
+}
