@@ -2,7 +2,6 @@ package pages;
 
 import loggerUtility.LoggerUtility;
 import modelObject.WebTableModel;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -40,11 +39,17 @@ public class WebTablePage extends BasePage {
         List<WebElement> addTableElementList = driver.findElements(WebTableLocators.addTableElement);
         String rowText = addTableElementList.get(testData.getNewTableSize() - 1).getText();
         Assert.assertTrue(rowText.contains(testData.getFirstNameValue()));
+        LoggerUtility.infoLog("The user validates the presence the First Name in table: " + testData.getFirstNameValue());
         Assert.assertTrue(rowText.contains(testData.getLastNameValue()));
+        LoggerUtility.infoLog("The user validates the presence the Last Name in table: " + testData.getLastNameValue());
         Assert.assertTrue(rowText.contains(testData.getUserEmailValue()));
+        LoggerUtility.infoLog("The user validates the presence the Email in table: " + testData.getUserEmailValue());
         Assert.assertTrue(rowText.contains(testData.getDepartmentValue()));
+        LoggerUtility.infoLog("The user validates the presence the Department in table: " + testData.getDepartmentValue());
         Assert.assertTrue(rowText.contains(testData.getSalaryValue()));
+        LoggerUtility.infoLog("The user validates the presence the Salary in table: " + testData.getSalaryValue());
         Assert.assertTrue(rowText.contains(testData.getAgeValue()));
+        LoggerUtility.infoLog("The user validates the presence the Age in table: " + testData.getAgeValue());
     }
 
     public void editNewEntry(WebTableModel testData) {
@@ -66,8 +71,11 @@ public class WebTablePage extends BasePage {
         List<WebElement> editTableElementList = driver.findElements(WebTableLocators.editTableElement);
         String editrowText = editTableElementList.get(testData.getNewTableSize() - 1).getText();
         Assert.assertTrue(editrowText.contains(testData.getEditDepartmentValue()));
+        LoggerUtility.infoLog("The user validates the presence the Department in table: " + testData.getEditDepartmentValue());
         Assert.assertTrue(editrowText.contains(testData.getEditSalaryValue()));
+        LoggerUtility.infoLog("The user validates the presence the Salary in table: " + testData.getEditSalaryValue());
         Assert.assertTrue(editrowText.contains(testData.getEditAgeValue()));
+        LoggerUtility.infoLog("The user validates the presence the Age in table: " + testData.getEditAgeValue());
     }
 
     public void deleteNewEntry(WebTableModel testData) {
@@ -75,6 +83,6 @@ public class WebTablePage extends BasePage {
         LoggerUtility.infoLog("The user clicks on Delete button.");
 
         elementHelper.validateSizeList(WebTableLocators.deleteTableElement, testData.getActualTableSize());
-        LoggerUtility.infoLog("The user sees that the table has " + testData.getNewTableSize() + " lines.");
+        LoggerUtility.infoLog("The user sees that the table has " + testData.getActualTableSize() + " lines.");
     }
 }
