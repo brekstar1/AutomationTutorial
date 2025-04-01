@@ -17,9 +17,9 @@ on:
         default: 2
         type: number
       suite:
-        description: 'Specify suite tag or tags:'
+        description: 'Specify suite tag or tags separated by ;'
         required: true
-        default: '@alertFrame,@form'
+        default: '@alertFrame;@form'
 
 jobs:
   build:

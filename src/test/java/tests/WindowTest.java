@@ -10,7 +10,7 @@ import suites.TestSuite;
 public class WindowTest extends SharedData {
 
     @Test(groups = {TestSuite.REGRESSION_SUITE,TestSuite.ALERT_FRAME_SUITE,
-            TestCaseSuite.TICKET_321,TestCaseSuite.TC_458})
+            TestCaseSuite.TICKET_123,TestCaseSuite.TC_458})
     public void metodaTest() {
 
         IndexPage indexPage = new IndexPage(getDriver());
