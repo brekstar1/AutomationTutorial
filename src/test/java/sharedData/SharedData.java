@@ -16,9 +16,14 @@ public class SharedData {
     @BeforeMethod(alwaysRun = true)
     public void prepareEnvironment(){
         testName = this.getClass().getSimpleName();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        driver = new ChromeDriver(options);
+        String remoteEnv = System.getProperty("cicd");
+        if(Boolean.parseBoolean(remoteEnv)) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            driver = new ChromeDriver(options);
+        } else{
+            driver = new ChromeDriver();}
+
         driver.get("https://demoqa.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
